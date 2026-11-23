@@ -15,10 +15,10 @@ int main() {
         std::cout << pizza.describe() << '\n';
     }
 
-    std::cout << "\nЗаказ 1 ('" << menu[2].title() << "'): "
-              << (menu[2].orderOne() ? "успешно" : "нет в наличии") << '\n';
-    std::cout << "Заказ 2 ('" << menu[2].title() << "'): "
-              << (menu[2].orderOne() ? "успешно" : "нет в наличии") << '\n';
+    std::cout << "\nЗаказ 1 ('" << menu.name() << "'): "
+              << (menu.orderOne() ? "успешно" : "нет в наличии") << '\n';
+    std::cout << "Заказ 2 ('" << menu.name() << "'): "
+              << (menu.orderOne() ? "успешно" : "нет в наличии") << '\n';
 
     try {
         Pizza invalid("p-bad", "", 30, 15.00, 1);

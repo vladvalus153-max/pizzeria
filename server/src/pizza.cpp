@@ -4,9 +4,9 @@
 #include <sstream>
 #include <iomanip>
 
-Pizza::Pizza(std::string id, std::string title, int sizeCm, double price, int available)
+Pizza::Pizza(std::string id, std::string name, int sizeCm, double price, int available)
     : id_(std::move(id)),
-      title_(std::move(title)),
+      name_(std::move(name)),
       sizeCm_(sizeCm),
       price_(price),
       available_(available) {
@@ -14,8 +14,8 @@ Pizza::Pizza(std::string id, std::string title, int sizeCm, double price, int av
 }
 
 void Pizza::validate() const {
-    if (id_.empty())    throw std::invalid_argument("Артикул (ID) не задан");
-    if (title_.empty()) throw std::invalid_argument("Название пиццы не задано");
+    if (id_.empty())   throw std::invalid_argument("Артикул (ID) не задан");
+    if (name_.empty()) throw std::invalid_argument("Название пиццы не задано");
     if (sizeCm_ != 25 && sizeCm_ != 30 && sizeCm_ != 35)
         throw std::invalid_argument("Диаметр пиццы должен быть 25, 30 или 35 см");
     if (price_ <= 0.0)
@@ -38,7 +38,7 @@ void Pizza::restock(int count) {
 
 std::string Pizza::describe() const {
     std::ostringstream out;
-    out << title_ << " (" << sizeCm_ << " см) — "
+    out << name_ << " (" << sizeCm_ << " см) — "
         << std::fixed << std::setprecision(2) << price_ << " BYN "
         << "[доступно: " << available_ << " шт.]";
     return out.str();
