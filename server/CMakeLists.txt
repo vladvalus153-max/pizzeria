@@ -6,7 +6,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(app
     src/main.cpp
+    src/menu_item.cpp
     src/pizza.cpp
+    src/drink.cpp
+    src/snack.cpp
 )
 
 target_include_directories(app PRIVATE include)
