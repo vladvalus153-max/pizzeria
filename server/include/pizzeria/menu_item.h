@@ -6,6 +6,9 @@ public:
     MenuItem(std::string id, std::string name, double price, int available);
     virtual ~MenuItem() = default;
 
+    MenuItem(const MenuItem&) = delete;
+    MenuItem& operator=(const MenuItem&) = delete;
+
     const std::string& id()   const noexcept { return id_; }
     const std::string& name() const noexcept { return name_; }
     double price()            const noexcept { return price_; }
