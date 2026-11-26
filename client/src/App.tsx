@@ -1,18 +1,19 @@
-import { PizzaCard } from "./components/PizzaCard";
-import type { Pizza } from "./types";
+import { MenuItemCard } from "./components/MenuItemCard";
+import type { MenuItem } from "./types";
 
-const pizzas: Pizza[] = [
-  { id: "p-1", name: "Маргарита", sizeCm: 30, price: 18.5, available: 5 },
-  { id: "p-2", name: "Пепперони", sizeCm: 35, price: 24.9, available: 3 },
-  { id: "p-3", name: "Четыре сыра", sizeCm: 30, price: 22, available: 1 },
-  { id: "p-4", name: "Гавайская", sizeCm: 25, price: 16, available: 4 },
-  { id: "p-5", name: "Мясное ассорти", sizeCm: 35, price: 27.5, available: 2 },
+// Те же пять позиций, что и в серверной программе
+const items: MenuItem[] = [
+  { type: "pizza", id: "p-1", name: "Маргарита", price: 18.5, available: 5, sizeCm: 30 },
+  { type: "pizza", id: "p-2", name: "Пепперони", price: 24.9, available: 3, sizeCm: 35 },
+  { type: "drink", id: "d-1", name: "Кола", price: 4.5, available: 10, volumeMl: 500 },
+  { type: "drink", id: "d-2", name: "Морс клюквенный", price: 6, available: 4, volumeMl: 1000 },
+  { type: "snack", id: "s-1", name: "Картофель фри", price: 7.2, available: 6, weightGrams: 150 },
 ];
 
 export default function App() {
   return (
     <main className="catalog">
-      {pizzas.map(pizza => <PizzaCard key={pizza.id} pizza={pizza} />)}
+      {items.map(item => <MenuItemCard key={item.id} item={item} />)}
     </main>
   );
 }
