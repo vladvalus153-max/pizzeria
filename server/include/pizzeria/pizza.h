@@ -6,7 +6,7 @@ public:
     Pizza(std::string id, std::string name, int sizeCm, double price, int available);
 
     int sizeCm() const noexcept { return sizeCm_; }
-    std::string kind() const override { return "Пицца"; }
+    std::string kind() const override { return "pizza"; }
     std::string describe() const override;
 
 private:
